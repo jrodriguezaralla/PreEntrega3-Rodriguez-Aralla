@@ -1,0 +1,124 @@
+/*---------------------------------------------VARIABLES GENERALES---------------------------------------------------------*/
+$background_color: #efefef;
+$rows_heigh: 400px;
+$letra_lobster: 'Lobster', cursive;
+$letra_peralta: 'Peralta', cursive;
+$letra_monserrat: 'Montserrat', sans-serif;
+$letra_indieflower: 'Indie Flower', cursive;
+$width_tablet: 768px;
+$width_cel:576px;
+$grid_gap:1rem;
+$grid_padding:1rem 1rem;
+
+
+/*------------------------------------------------VARIABLES BODY-----------------------------------------------------------*/
+
+$screen_heigh: 100vh;
+$screen_width: 100vw;
+$header_hight:70px;
+$footer_hight:70px;
+$body_rows_size: $header_hight 1fr $footer_hight;
+$background_color_transparency: rgba(225, 227, 231, 0.5);
+
+/*----------------------------------------------VARIABLES HEADER-----------------------------------------------------------*/
+$nav_color: white;
+$nav_color2:rgb(9, 48, 9);
+$nav_heigh: 70px;
+$link_backgroud_color:grey;
+$box_shadow_style:0 1rem 1rem rgba(0, 0, 0, 1);
+
+/*----------------------------------------------VARIABLES FOOTER-----------------------------------------------------------*/
+$footer_text_color:white;
+
+/*----------------------------------------------VARIABLES INICIO------------------------------------------------------------*/
+$title_font_family:"Bleeding Cowboys";
+$title_font_size: 7rem;
+$title_font_color: linear-gradient(180deg, rgba(247,5,5,1) 0%, rgba(22,125,4,1) 100%);
+$title_shadow: 15px 15px 5px grey;
+
+$title2_font_size: 5rem;
+$title2_font_color: rgb(9, 48, 9);;
+
+$media_title_font_size: 3.1rem;
+$media_title2_font_size: 2rem;
+
+/*----------------------------------------------VARIABLES NOSOTROS---------------------------------------------------------*/
+//$nosotros_columns_width: 50% 50%; /*cada proción ocupa el 50% de la pantalla*/
+$nosotros_columns_width: repeat(auto-fit, minmax(50vw,600px));/*a medida que se achica la pantalla se autoajustan las imagen hacia abajo tipo flex-wrap*/
+$nosotros_rows_heigh: 400px; /*se indica que el alto del div sea el alto de la imagen para */
+$Nosotros_title_color:rgb(9, 48, 9);
+
+//$media_nosotros_columns_width: repeat(auto-fill, minmax(20rem,49%));/*a medida que se achica la pantalla se autoajustan las imagen hacia abajo tipo flex-wrap*/
+//$media_nosotros_rows_heigh: 50% 50%;
+
+/*------------------------------------------------VARIABLES MENU-----------------------------------------------------------*/
+$menu_title_size: 2rem;
+$menu_title_color: white;
+$menu_box_shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+$menu_rows_heigh: 400px;
+$menu_column_width: repeat(auto-fit, minmax(20rem,24%));/*a medida que se achica la pantalla se autoajustan las imagen hacia abajo tipo flex-wrap*/
+
+$media_menu_column_width: 300px;
+$media_menu_rows_heigh: repeat(4,400px); /*se le da el alto de los divs*/;
+/*-----------------------------------------------VARIABLES PROMOS-----------------------------------------------------------*/
+$promos_title_size: 3rem;
+$promos_title_color: white;
+$promos_paragraph_size:1.5rem;
+$promos_paragraph_color: white;
+$promo_text_shadow: 5px 5px 1px black;
+$promo_box_shadow: 5px 5px 10px black;
+$promos_column_width: repeat(auto-fit, minmax(20rem,19%)); /*a medida que se achica la pantalla se autoajustan las imagen hacia abajo tipo flex-wrap*/
+$promos_rows_heigh: 400px;
+
+$media_promos_column_width: 300px;
+$media_promos_rows_heigh: repeat(5,400px); /*se le da el alto de los divs*/;
+/*----------------------------------------------VARIABLES CONTACTO----------------------------------------------------------*/
+$contacto_columns_width: 90%;
+$contacto_rows_heigh: 20px 20px auto auto 24px;
+$contacto_border_color: rgb(4, 250, 4);
+$contacto_box_shadow: 0 0 5px rgb(4, 250, 4);
+$contacto_sign_color: red;
+$contacto_sign_shadow: 2px 2px 5px black;
+$contacto_box_heigh:500px;
+$contacto_box_width:30%;
+
+$media_contacto_box_heigh:70%;
+$media_contacto_box_width:90%;
+/*-----------------------------------------------VARIABLES PIZZAS-----------------------------------------------------------*/
+$pizzas_columns_width: 100%;
+$pizzas_rows_heigh: 3rem 600px 40px;
+$pizzas_title_color: white;
+$pizzas_title_size: 3rem;
+$pizzas_box_heigh:400px;
+$pizzas_box_width:400px;
+
+$media_pizzas_rows_heigh: 3rem 1fr 40px;
+$media_pizzas_listado_height: 220px;
+$media_pizzas_listado_width: 80%;
+$media_pizzas_title_size:2rem;
+/*----------------------------------------------VARIABLES EMPANADAS---------------------------------------------------------*/
+$empanadas_columns_width: 100%;
+$empanadas_rows_heigh: 3rem auto 40px 40px;
+$empanadas_title_color: white;
+$empanadas_title_size: 3rem;
+
+$media_empanadas_title_size: 2rem;
+$media_empanadas_text_size: 1.5rem;
+/*----------------------------------------------VARIABLES SANDWICHES--------------------------------------------------------*/
+$sandwiches_columns_width: 100%;
+$sandwiches_rows_heigh: 3rem auto 40px 40px;
+$sandwiches_title_color: white;
+$sandwiches_title_size: 3rem;
+$sandwiches_sign_color: red;
+$sandwiches_sign_size: 2rem;
+
+$media_sandwiches_title_size: 2rem;
+$media_sandwiches_sign_size: 1.5rem;
+/*-----------------------------------------------VARIABLES HELADOS----------------------------------------------------------*/
+$helados_columns_width: 100%;
+$helados_rows_heigh: 3rem 550px 40px;
+$helados_title_color: white;
+$helados_title_size: 3rem;
+
+$media_helados_title_size: 2rem;
+$media_helados_rows_heigh: 3rem 400px 40px;

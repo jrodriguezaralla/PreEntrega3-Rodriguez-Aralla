@@ -1,0 +1,186 @@
+@import "_variables";
+@import "_mixins";
+@import "_fuentes";
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------INICIALIZACION-------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------*/
+
+/* Reseteo de pantalla */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Se modifica la fuente del documento y se indica que ocupe el ancho del navegador */
+html{
+    font-family: $letra_monserrat;
+    height: $screen_heigh;
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------ESTILO BODY--------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------*/
+
+/*Se define el body como grid padre y dentro de el los hijos header, section y footer*/
+body{
+    height: $screen_heigh;
+    display: grid;
+    grid-template-areas: 
+    "nav"
+    "section"
+    "footer";
+    grid-template-columns: $screen_width;
+    grid-template-rows: $body_rows_size;
+    align-content: space-between;
+}
+
+/*se coloca un color de fonde gris para que resalte texto e imagen*/
+.body__background--color{
+    background-color: $background_color;
+}
+
+/*Se coloca imagen de fondo en el body y con una opacidad de 0.5 para que se vea transparente y resalte texto*/
+.body--background{
+    background: linear-gradient($background_color_transparency,$background_color_transparency), url(../imagenes/pizza.jpg) no-repeat center center fixed; 
+}
+
+/*Se coloca imagen de fondo en el body*/
+.empanadas__body--background {
+    background-image: url(../Imagenes/empanadas.jpg);
+}
+
+/*Se coloca imagen de fondo en el body*/
+.sandwich__body--background {
+    background-image: url(../Imagenes/sandwich.jpg);
+}
+
+/*Se coloca imagen de fondo en el body*/
+.helados__body--background {
+    background-image: url(../Imagenes/helados.jpg);
+}
+
+.body__img--position{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/*clase para centrado de imagenes dentros de los DIVS contenedores*/
+.img__box--position{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*-------------------------------------------------INDEX----------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------ESTILO HEADER--------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------*/
+
+/*se oculta y se le da formato al icono que abre menu de navegación*/
+.NavBtn{
+    color: $nav_color;
+    display: none;
+    padding-right: 1rem;
+    font-size: 30px;
+}
+
+/*elimino el recuadro de check list*/
+#check{
+    display: none;
+}
+
+/*Se define el header como flex para posicionar imagen y menu de navegación*/
+header nav{
+    grid-area: nav;
+    /* background-color: rgb(9, 48, 9); */
+    /* background: linear-gradient(90deg, rgba(0,146,70,1) 17%, rgba(242,242,242,1) 33%, rgba(242,242,242,1) 66%, rgba(222,131,138,1) 79%, rgba(206,43,55,1) 100%); */
+    background: linear-gradient(to right, $nav_color,$nav_color2);
+    @include flex-row-spacebetween;
+    align-items: center;
+    height: 70px;
+    width: 100;
+    /*Se retoca un poco la posición de la imagen*/
+    img{
+    padding: 0.3rem;
+    margin-left: 1rem;
+    }
+    /*Se declara a la lista contenedora del menú de navegación como flex para alinear los items*/
+    ul{
+        height: $nav_heigh;
+        list-style: none;
+        @include flex-row-spacebetween;
+        align-items: center;
+        /*Se indica que la lista se posicione en línea y el texto alineado al centro del contenedor*/
+        li {
+            height: $nav_heigh;
+            display: inline-block;
+            text-align: center;
+            /*Se le da formato a las diferentes opciones del menú de navegación*/
+            a{
+                /*formato del texto */
+                height: $nav_heigh;
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: bold;
+                color: white;
+                padding-left: 24px;
+                padding-right: 24px;
+                /*alineacion texto*/
+                display: flex;
+                align-items: center;
+                /*Al pasar por arriba del link se pinta el fonde del contenedor de color gris*/
+                &:hover{
+                    /*al pasar el cursor por el link aparece una manito*/
+                    cursor: pointer;
+                    background: $link_backgroud_color;
+                    box-shadow: $box_shadow_style;
+                }
+            }
+        }
+    }
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------ESTILO FOOTER--------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------*/
+
+/*Se declara el footer como flex para posicionar elementos*/
+footer{
+    grid-area: footer;
+    /* background-color: rgb(9, 48, 9); */
+    /* background: linear-gradient(90deg, rgba(0,146,70,1) 17%, rgba(242,242,242,1) 33%, rgba(242,242,242,1) 66%, rgba(222,131,138,1) 79%, rgba(206,43,55,1) 100%); */
+    background: linear-gradient(to left,$nav_color,$nav_color2);
+    @include flex-row-spacebetween;
+    align-items: center;
+    /*Dentro del footer se alinean los logos de redes sociales*/
+    
+    div{
+        display: flex;
+        /*posiciono links de redes sociales y los acomodo*/
+        a{
+            padding-left: 10px;
+            padding-right: 30px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+    }
+    /*Se le da color a las letras de Copyright y un padding left para separarlo del borde*/
+    p{
+    padding: 10px;
+    color: $footer_text_color;
+}
+}
+
+/*Customizacion de animación de libreria*/
+.animacion_pulse {
+    animation: pulse; /* Se hace referncia a la animación*/
+    animation-iteration-count: infinite; /*Se setea iteracion*/
+    /* animation-duration: 10s; */
+    --animate-duration: 2s; /*se setea la duracion de la animacion*/
+}

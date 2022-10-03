@@ -1,0 +1,290 @@
+/*----------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------COMPORTAMIENTO DE PANTALLA TAMAÑO TABLET-------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: $width_tablet) {
+/*-----------------------------------------------------HEADER-----------------------------------------------------*/ 
+    /*Se le da formato a las diferentes opciones del menú de navegación*/
+    .MenNav-size{
+        font-size: 1rem;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+/*-------------------------------------------------SECTION INICIO-------------------------------------------------*/ 
+    /*Se le da formato al texto central de bienvenida*/
+    .index-section__titulo {
+        font-size: 5.5rem;
+    }
+    .index-section__titulo2 {
+        font-size: 4rem;
+    }
+/*------------------------------------------------SECTION NOSOTROS------------------------------------------------*/
+    /**/
+    .nosotros__section{
+        align-content: center;
+        justify-content: center;
+    }
+
+    .nosotros__section__image--aligment{
+        justify-content: center;
+        width: 100%;
+    }
+    .nosotros__section__text--aligment{
+        justify-self: center;
+    }
+
+    .nosotros__section__image--size{
+        transform: scale(0.8,0.8);
+    }
+
+    .nosotros__section__titulo--formato{
+        font-size: 2.5rem;
+    }
+
+    .nosotros__section__paragraph--formato{
+        font-size: 1rem;
+    }
+
+/*--------------------------------------------------SECTION MENU--------------------------------------------------*/
+.menu__section--aligment{
+    row-gap: 1rem;
+    padding: 1rem;
+    /*se modifica el grid para que se vea como columna*/
+    @include display_aligment (grid, $media_menu_column_width, $media_menu_rows_heigh, space-evenly, start);
+    overflow-y: scroll;
+}
+
+/*-------------------------------------------------SECTION PROMOS-------------------------------------------------*/
+
+.promos__section--aligment{
+    align-content: flex-start;
+    overflow-y: scroll;
+}
+
+/*------------------------------------------------SECTION GALERIA-------------------------------------------------*/
+
+//nada que modificar
+
+/*------------------------------------------------SECTION CONTACTO------------------------------------------------*/
+
+.contacto__section--style{
+    @include sizes($media_contacto_box_heigh,$media_contacto_box_width);
+}
+
+/*-------------------------------------------------SECTION PIZZAS-------------------------------------------------*/
+
+.pizzas__section--style h1{
+    font-size: $media_pizzas_title_size; //se redefine el tamaño del titulo
+}
+
+/*-----------------------------------------------SECTION EMPANADAS------------------------------------------------*/
+
+.empanadas__section--aligment h1{
+    font-size: $media_empanadas_title_size; // se modifica tamaño del titulo
+}
+
+.empanadas__section__listado--style li{
+    /*se le da un ancho a los items del listado para que queden un poco centrados*/
+    width: 90%;
+}
+
+/*-----------------------------------------------SECTION SANDWICHES-----------------------------------------------*/
+.sandwich__lista--aligment{
+    width: 90%; //redimensionamiento del box con el listado
+}
+
+.sandwich__section--aligment{
+    justify-items: center; //se realinea el box con el listado
+}
+
+.sandwich__nota--style{
+    width: 90%; //se fija el cartel al 90% de la pantalla
+}
+
+/*------------------------------------------------SECTION HELADOS-------------------------------------------------*/
+.helados__section--aligment h1{
+    font-size: $media_helados_title_size;
+}
+
+.helados__section--styles{
+    width: 90%; //se ajusta tamaño del box al 90%
+}
+
+/*posicionamiento de box contenedor de opciones*/
+.box__posicionamiento{
+    align-items: flex-start;
+    justify-self: center;
+    overflow-y: scroll;
+}
+
+
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------COMPORTAMIENTO DE PANTALLA TAMAÑO CEL--------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: $width_cel) {
+/*-----------------------------------------------------HEADER-----------------------------------------------------*/    
+    /*Se hace visible el boton de navegación*/
+    .NavBtn{
+        display: block;
+    }
+    
+    /*Customización de menú de navegación*/
+    .nav__bar--style{
+        /*Poisiconamiento de menú en forma vertical*/
+        @include flex_column_spacearound;
+        left: -100%;
+        z-index: 1;/*se aplica un z-index para que el menú aparezca sobre cualquier fondo*/
+        /*Se posicione el Menu*/
+        position: fixed; /*Posicionamiento fijo*/
+        /*que ocupe el 100% de la pantalla*/
+        /*que el alto sea el View Port High menos el header y el footer*/
+        @include sizes (calc(100vh - 140px), 100%);
+        top: 70px; /*posicionado debajo del header*/
+        background-color: rgba(0, 0, 0, 0.7);
+        /*Animación para que aparezca de izquierda a derecha*/
+        transition: left 1s;
+        /*se da formato al texto del menú de navegación*/
+        a{
+            padding: 0;
+            font-size: 1.5rem;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+    /*Pseudoclase que habilita que al presionar el botón de navegación, se posicionen la barra en la pantalla*/
+    #check:checked ~ ul{
+        left: 0;
+    }
+/*-------------------------------------------------SECTION INICIO-------------------------------------------------*/ 
+    /*Se redimentiona Titulo 1 y 2 para que entren en la pantalla*/
+    .index-section__titulo{
+        font-size: $media_title_font_size;
+    }
+    .index-section__titulo2{
+        font-size: $media_title2_font_size;
+    }
+    /*se redefine el tamaño de la sombra al hacer click*/
+    header nav{
+        li{
+            @include sizes (auto, 100%);
+        }
+        a{
+            @include sizes (auto, auto);
+            &:hover{
+                transform: scale(1.1); /*al hacer click el tamaño de la letra se agranda*/
+                background: none;
+                box-shadow: none;
+            }
+        }
+    }    
+/*------------------------------------------------SECTION NOSOTROS------------------------------------------------*/
+    /*Se escala la imagen al 50% del tamaño original para que entre en la pantalla*/
+    .nosotros__section__image--size{
+        transform: scale(0.5,0.5);
+    }
+
+    .nosotros__section__titulo--formato{
+        font-size: 2rem;
+    }
+
+    .nosotros__section__paragraph--formato{
+        font-size: 1rem;
+    }
+
+/*--------------------------------------------------SECTION MENU--------------------------------------------------*/
+.promos__section--aligment{
+    row-gap: 1rem;
+    padding: 1rem;
+    /*se modifica el grid para que se vea como columna*/
+    @include display_aligment (grid, $media_menu_column_width, $media_menu_rows_heigh, space-evenly, start);
+    overflow-y: scroll;
+}
+
+/*-------------------------------------------------SECTION PROMOS-------------------------------------------------*/
+.promos__section--aligment{
+    row-gap: 1rem;
+    padding: 1rem;
+    /*se modifica el grid para que se vea como columna*/
+    @include display_aligment (grid, $media_promos_column_width, $media_promos_rows_heigh, space-evenly, start);
+    overflow-y: scroll;
+}
+
+/*------------------------------------------------SECTION GALERIA-------------------------------------------------*/
+
+.galeria__section--aligment{
+    overflow-y: scroll; //scrolleo del section
+    align-content: start; // se alinean elementos al inicio
+    img {
+        transform: scale(0.8,0.8); //se redimensionan imagenes
+    }
+}
+
+/*------------------------------------------------SECTION CONTACTO------------------------------------------------*/
+
+//nada que modificar
+
+/*-------------------------------------------------SECTION PIZZAS-------------------------------------------------*/
+
+/*Se quita formato a lista y se alínean ambos listados equitativamente en el centro*/
+.box--position{
+    @include flex-column-center;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    overflow-y: scroll;
+    
+}
+
+.pizzas__section--style{
+    grid-template-rows: $media_pizzas_rows_heigh; //se redefine el tamaño de las filas
+}
+
+.pizzas__listado--style div{
+    @include sizes ($media_pizzas_listado_height,$media_pizzas_listado_width); //se redefine ancho y alto de boxs
+} 
+/*-----------------------------------------------SECTION EMPANADAS------------------------------------------------*/
+
+
+.letras__estilo{
+    font-size: $media_empanadas_text_size; // se modifica tamaño de texto
+}
+
+/*-----------------------------------------------SECTION SANDWICHES-----------------------------------------------*/
+.sandwich__section--aligment{
+    justify-items: center;
+    h1{
+        font-size: $media_sandwiches_title_size;
+    }
+}
+
+/*formato del la nota de agregar papas*/
+.sandwich__nota--style{
+    font-size: $media_sandwiches_sign_size;
+}
+
+/*------------------------------------------------SECTION HELADOS-------------------------------------------------*/
+
+/*display grid para organizar los elementos*/
+.helados__section--aligment{
+    grid-template-rows: $media_helados_rows_heigh; //se redefine el tamaño de las filas
+}
+
+/*formato del box contenedor del lsitado*/
+.box__formato{
+    overflow-y: scroll;
+    align-items: flex-start;
+}
+
+/*-----------------------------------------------------FOOTER-----------------------------------------------------*/ 
+    /*Se redefine el tamaño del texto de copyright*/
+    .footer__text-size{
+        font-size: 0.75rem;
+    }
+    /*Se redefine el espacio entre los icionos de redes sociales*/
+    .footer__iconos-padding{
+        padding-right: 15px;
+        padding-left: 5px;
+    }
+}

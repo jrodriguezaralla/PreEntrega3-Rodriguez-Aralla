@@ -1,0 +1,449 @@
+/*---------------------------------------INCLUSION DE ARCHIVOS----------------------------------------------------*/
+@import "_variables";
+@import "_global";
+@import "_botones";
+@import "_media";
+@import "_mixins";
+@import "_fuentes";
+/*----------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------ESTILOS SECTION----------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------INICIO---------------------------------------------------------*/
+
+/*Se centro el texto en el centro de la pantalla*/
+.index-section{
+    grid-area: section;
+    @include flex-column-center;
+    align-items: center;
+}
+
+/*Se le da formato al texto central de bienvenida*/
+.index-section__titulo {
+    font-family: $title_font_family;  
+    text-align: center;
+    font-size: $title_font_size;
+    width: 100%;
+    /*truco para que el texto se vea degradado*/
+    background-clip: text;
+    color: transparent;
+    background: $title_font_color;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+.index-section__titulo2 {
+    font-family: $letra_lobster; 
+
+    text-align: center;
+    font-size: $title2_font_size;
+    color: $title2_font_color;
+    text-shadow: $title_shadow;
+}
+
+/*-----------------------------------------------NOSOTROS---------------------------------------------------------*/
+
+/*Se genera un display grid de 2 columnas para posicionar la imagen y el texto; ambos centradas*/
+.nosotros__section{
+    grid-area: section;
+    @include display_aligment (grid, $nosotros_columns_width, $nosotros_rows_heigh, center, center);
+    grid-auto-rows: 200px; /*se forza el alto de los divs*/
+}
+
+/*Clase que se llama desde el div contenedor de la imagen para ubicarla*/
+.nosotros__section__image--aligment{
+    @include flex-row-center;
+    justify-content: end;
+}
+
+/*Clase que se llama desde el div contenedor del texto para ubicarlo*/
+.nosotros__section__text--aligment{
+    @include flex-column-flexstart;
+    padding: 0 2rem;
+}
+
+/*formato del título SOBRE NOSOTROS*/
+.nosotros__section__titulo--formato{
+    font-family: $letra_lobster;
+    color: $Nosotros_title_color;
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 3rem;
+}
+
+/*Formato de texto descriptivo "SOBRE NOSOTROS"*/
+.nosotros__section__paragraph--formato{
+    font-size: 1.5rem;
+    text-align: justify;
+    font-style: italic;
+}
+
+/*-------------------------------------------------MENU-----------------------------------------------------------*/
+
+/*Se genera un display grid para ubicar las iamgenes en el centro y espaciadas equitativamente*/
+.menu__section--aligment{
+    /*Con estas líneas realizo un diseño reponsive*/
+    /*a medida que se achica la pantalla se autoajustan las imagen hacia abajo tipo flex-wrap*/
+    /*se le da el alto de los divs de 400px*/
+    /*alineacion de imagenes en el centro*/
+    grid-area: section;
+    @include display_aligment_responsive (grid, $menu_column_width, $menu_rows_heigh, space-evenly, center);
+    @include grid_aligment ($grid_gap, $grid_padding);
+    
+    /*propiedades de link*/
+    a{
+        @include sizes (100%, 100%); /*mixin para definir alto y ancho*/
+        text-decoration: none;
+        @include flex-column-center;
+        /*Se alinea texto*/
+        align-items: center;
+    }
+    /*Estilo textos*/
+    h3{
+        text-align: center;
+        font-size: $menu_title_size;
+        color: $menu_title_color;
+
+    }
+    
+}
+
+/*Se quita el borde de las imagenes y se redondea esquinas*/
+.menu__section__img--radius {
+    border: none;
+    border-radius: 1rem;
+    height: 400px;
+    /*comportamiento del shadow al pasar arriba de las imagenes*/
+    &:hover{
+    transition: box-shadow 0.3s ease; /*se agrega un retardo al shadow*/
+    box-shadow: $menu_box_shadow;
+    }
+}
+
+/*se cargan las imagenes de fondo en los DIVS*/
+.section__box__pizzas--background{
+    background-image: url(../Imagenes/pizza.jpg);
+}
+
+.section__box__empanadas--background{
+    background-image: url(../Imagenes/empanadas.jpg);
+}
+
+.section__box__sandwich--background{
+    background-image: url(../Imagenes/sandwich.jpg);
+}
+
+.section__box__helados--background{
+    background-image: url(../Imagenes/helados.jpg);
+}
+
+/*-----------------------------------------------PROMOS-----------------------------------------------------------*/
+
+/*Se genera un display grid para ubicar las iamgenes en el centro y espaciadas equitativamente*/
+.promos__section--aligment{
+    grid-area: section;
+    @include grid_aligment ($grid_gap, $grid_padding);
+    
+    /*Con estas líneas realizo un diseño reponsive*/
+    @include display_aligment_responsive (grid, $promos_column_width, $promos_rows_heigh, space-evenly, center);
+    /*posicionamiento de texto*/
+    p{
+        text-align: center;
+        font-size: $promos_paragraph_size;
+        font-weight: bold;
+        text-shadow: $promo_text_shadow;
+        color: $promos_paragraph_color;
+    }
+
+    /*posicionamiento de texto*/
+    h3{
+        text-align: center;
+        font-size: $promos_title_size;
+        color: $promos_title_color;
+    }
+}
+
+.promos__box--style{
+    border: none;
+    border-radius: 1rem;
+    background-image: url(../Imagenes/imagen_2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /*Sombra de los recuadors de las imagenes*/
+    text-shadow: $promo_text_shadow;
+    box-shadow: $promo_box_shadow;
+
+    /*se indica display flex para posicionar textos*/
+    @include flex-column-spacebetween;
+    align-items: center;
+    /*se agrega padding para separar texto de los bordes superiores e inferiores*/
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+/*-----------------------------------------------GALERIA----------------------------------------------------------*/
+/*en el section se colocan todas las imagenes*/
+.galeria__section--aligment{
+    grid-area: section;
+    @include flex_wrap; //se posicionan en forma wrap para que sea responsive
+    @include grid_aligment ($grid_gap, $grid_padding);
+    justify-content: space-evenly;
+    align-content: space-evenly;
+}
+
+/*-----------------------------------------------CONTACTO---------------------------------------------------------*/
+
+/*Se indica display flex para centrar el cuadro de formulario*/
+.contacto__section--aligment{
+    @include flex-column-center;
+    align-items: center;
+}
+
+/*estilo formulario*/
+.contacto__section--style{
+    grid-area: section;
+    /*Definición de tamaño y estilos del recuadro*/
+    @include sizes ($contacto_box_heigh, $contacto_box_width); /*mixin para definir alto y ancho*/
+    background-color: white;
+    border-radius: 2rem;
+    /*display grid para alinear los componentes*/
+    /*90% para poder darles un margen en los laterales*/
+    @include display_aligment (grid, $contacto_columns_width, $contacto_rows_heigh, center, space-evenly); //Mixin para posicionar los elementos en la pantalla
+    /*Clase para definir los bordes de los recuadros de inputs*/
+    input, textarea{
+        border-radius: 5px;
+        width: 100%;
+        /*Se indica que al hacer click en el campo input se sombrea*/
+        &:hover{
+            border-color: $contacto_border_color;
+            box-shadow: $contacto_box_shadow;
+            border-width:3px;
+        }
+    }
+    /*formato del texto de warning*/
+    p{
+        color: $contacto_sign_color;
+        text-align: justify;
+        font-weight: bold;
+        text-shadow: $contacto_sign_shadow;
+    }
+}
+
+
+
+/*-------------------------------------------------PIZZAS---------------------------------------------------------*/
+/*display grid para organizar los elementos*/
+.pizzas__section--style{
+    /*3 filas y 1 columna - Titulo, sabores y boton volver a la página menú*/
+    /*posicionamiento horizontal repartido*/
+    @include display_aligment (grid, $pizzas_columns_width, $pizzas_rows_heigh, center, space-around); //Mixin para posicionar los elementos en la pantalla
+    /*formato del texto "NUESTRAS PIZZAS"*/
+    h1{
+        font-family: $letra_lobster;
+        color: $pizzas_title_color;
+        text-align: center;
+        font-size: $pizzas_title_size;
+    }
+}
+
+/*Se quita formato a lista y se alínean ambos listados equitativamente en el centro*/
+.pizzas__listado--style{
+    
+    list-style: none;
+    justify-content: space-evenly;
+    /*formato de los recuadros de las listas de sabores*/
+    div {
+        
+        /*ancho del box contenedor, que ocupen el 40% de la pantalla cada uno*/
+        @include sizes ($contacto_box_heigh, $contacto_box_width); /*mixin para definir alto y ancho*/
+        background-color: $background_color;
+        border-radius: 0.5rem;
+        /*declaro un display flex para posicionar los listados*/
+        @include flex-column-center; //posicionamiento flex como columnas centradas
+        overflow-y: scroll;
+        justify-content: flex-start;
+        padding: 1rem;
+        /*formato de los diferentes sabores de pizzas*/
+        p {
+            font-family: $letra_peralta;
+            margin-left: 1rem; /*se le da una pequeña sangría con respecto al título*/
+            font-weight: bold;
+        }
+        /*formato de los ingredientes de los diferentes sabores de pizzas*/
+        ul {
+            list-style: none;
+            margin-left: 2rem;
+            font-style: italic;
+        }
+    }
+}
+
+/*indico que los listados de sabores sean flex para poder posicionarlos*/
+.box--position{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.pizzas_list--position{
+    justify-content: start;
+}
+
+/*-----------------------------------------------EMAPANADAS-------------------------------------------------------*/
+/*display grid para organizar los elementos*/
+.empanadas__section--aligment{
+    /*3 filas y 1 columna - Titulo, sabores y boton volver a la página menú*/
+    /*posicionamiento horizontal repartido*/
+    @include display_aligment (grid, $empanadas_columns_width, $empanadas_rows_heigh, center, space-around); //Mixin para posicionar los elementos en la pantalla
+    /*formato del texto "NUESTRAS EMPANADAS"*/
+    h1{
+        font-family: $letra_lobster;
+        color: $empanadas_title_color;
+        text-align: center;
+        font-size: $empanadas_title_size;
+}
+}
+
+/*Se quita el formato del listado y se le da uno nuevo*/
+.empanadas__section__listado--style{
+    font-family: $letra_peralta;
+    list-style: none;
+    background-color: $background_color;
+    border-radius: 0.5rem;
+    width: auto; /*ancho de la caja contenedora con el texto de los sabores, es para centrar la misma*/
+    @include flex-column-center; //posicionamiento flex como columnas centradas
+    align-items: center;
+    /*se le da un ancho a los items del listado para que queden un poco centrados*/
+    li{
+        width: 90%;
+    }
+}
+
+/*pisicionamiento del cuadro con los sabores*/
+.listado__fondo{
+    @include flex-row-center; //posicionamiento flex como filas centradas
+}
+
+/*formato de las letras del listado de sabores*/
+.letras__estilo{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/*-----------------------------------------------SANDWICH---------------------------------------------------------*/
+
+/*display grid para organizar los elementos*/
+.sandwich__section--aligment{
+    /*4 filas y 1 columna - Titulo, sabores y boton volver a la página menú*/
+    /*align-content: space-around: posicionamiento horizontal repartido*/
+    @include display_aligment (grid, $sandwiches_columns_width, $sandwiches_rows_heigh, center, space-around); //Mixin para posicionar los elementos en la pantalla
+    /*formato texto "Nuestros sandwiches"*/
+    h1{
+        font-family: $letra_lobster;
+        color: $sandwiches_title_color;
+        text-align: center;
+        font-size: $sandwiches_title_size;
+    }
+}
+
+/*alineación del texto dentro del box contenedor*/
+.sandwich__listado--alineacion{
+    width: auto;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+/*estilo del box con los listados de los tipo de sandwich*/
+.sandwich__section__listado--style {
+    list-style: none;
+    background-color: $background_color;
+    border-radius: 0.5rem;
+    @include flex-column-center; //posicionamiento flex como columnas centradas
+    /*pongo los títulos de los tipos de sandwich en negrita*/
+    p{
+        font-family: $letra_peralta;
+        font-size: 1rem;    
+        font-weight: bold;
+    }
+    ul{
+        font-style: italic;
+    }
+}
+
+/*formato del la nota de agregar papas*/
+.sandwich__nota--style{
+    text-align: center;
+    margin: auto auto;
+    color: $sandwiches_sign_color;
+    font-size: $sandwiches_sign_size;
+    font-weight: bold;
+}
+
+/*agrego formato a los subitems del listado*/
+.sandwich__lista--style{
+    list-style-type: disc;/*se agregan discos*/
+    margin-left: 2rem; /*se le da una sangria*/
+}
+
+/*pisicionamiento del cuadro con los tipos de sandwich*/
+.sandwich__lista--aligment{
+    @include flex-row-center; //posicionamiento flex como filas centradas
+}
+
+/*------------------------------------------------HELADOS---------------------------------------------------------*/
+
+/*display grid para organizar los elementos*/
+.helados__section--aligment{
+    /*3 filas y 1 columna - Titulo, sabores y boton volver a la página menú*/
+    /*posicionamiento horizontal repartido*/
+    @include display_aligment (grid, helados_columns_width, $helados_rows_heigh, center, space-evenly); //Mixin para posicionar los elementos en la pantalla
+    /*formato texto "Nuestros Helados"*/
+    h1{
+        font-family: $letra_lobster;
+        color: $helados_title_color;
+        text-align: center;
+        font-size: $helados_title_size;
+    }
+}
+
+/*Se quitan los bullets a la lista principal*/
+.helados__section__lista--style {
+    list-style: none;
+    p{
+        font-family: $letra_peralta;
+    }
+    ul li{
+        font-style: italic;
+    }
+}
+
+/*formato del box contenedor del lsitado*/
+.box__formato{
+    background-color: $background_color;
+    border-radius: 0.5rem;
+    width: auto;
+    @include flex-column-center; //posicionamiento flex como columnas centradas
+    padding: 1rem;
+}
+
+/*posicionamiento de box contenedor de opciones*/
+.box__posicionamiento{
+    @include flex-row-center; //posicionamiento flex como filas centradas
+    /*formato de título opciones dentro del listado*/
+    p{
+        font-size: 1rem;    
+        font-weight: bold;
+    }
+}
+
+/*agrego formato a los subitems del listado*/
+.helados__lista--style{
+    list-style-type: disc;/*se agregan discos*/
+    margin-left: 2rem; /*se le da una sangria*/
+}
+
+/*---------------------------------------INCLUSION DE ARCHIVOS MEDIA QUERY-------------------------------------------------*/
+@import "_media";
