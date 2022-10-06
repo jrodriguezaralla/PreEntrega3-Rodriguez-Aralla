@@ -5,6 +5,7 @@
 @import "_media";
 @import "_mixins";
 @import "_fuentes";
+@import "_maps";
 /*----------------------------------------------------------------------------------------------------------------*/
 /*---------------------------------------------ESTILOS SECTION----------------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------------------*/
@@ -75,6 +76,7 @@
 /*Formato de texto descriptivo "SOBRE NOSOTROS"*/
 .nosotros__section__paragraph--formato{
     font-size: 1.5rem;
+    width: 80%;
     text-align: justify;
     font-style: italic;
 }
@@ -122,21 +124,12 @@
 }
 
 /*se cargan las imagenes de fondo en los DIVS*/
-.section__box__pizzas--background{
-    background-image: url(../Imagenes/pizza.jpg);
+@each $name, $tipo_imagen in $imagenes {
+    .section__box__#{$name}--background {
+        background-image: $tipo_imagen;
+    }
 }
 
-.section__box__empanadas--background{
-    background-image: url(../Imagenes/empanadas.jpg);
-}
-
-.section__box__sandwich--background{
-    background-image: url(../Imagenes/sandwich.jpg);
-}
-
-.section__box__helados--background{
-    background-image: url(../Imagenes/helados.jpg);
-}
 
 /*-----------------------------------------------PROMOS-----------------------------------------------------------*/
 

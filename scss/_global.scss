@@ -1,6 +1,7 @@
 @import "_variables";
 @import "_mixins";
 @import "_fuentes";
+@import "_maps";
 
 /*----------------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------INICIALIZACION-------------------------------------------------------*/
@@ -42,23 +43,19 @@ body{
 
 /*Se coloca imagen de fondo en el body y con una opacidad de 0.5 para que se vea transparente y resalte texto*/
 .body--background{
-    background: linear-gradient($background_color_transparency,$background_color_transparency), url(../imagenes/pizza.jpg) no-repeat center center fixed; 
+    background: linear-gradient($background_color_transparency,$background_color_transparency), url(../imagenes/pizza.jpg) no-repeat center center fixed;
 }
 
-/*Se coloca imagen de fondo en el body*/
-.empanadas__body--background {
-    background-image: url(../Imagenes/empanadas.jpg);
+/*Se coloca imagen de fondo en el body de pagina empanadas, sandwich, helados*/
+@if 1+1==2{ //If solo para probar condicional de SASS, no aporta nada
+    @each $name, $tipo_imagen in $imagenes {
+        .#{$name}__body--background {
+            background-image: $tipo_imagen;
+        }
+    }
 }
 
-/*Se coloca imagen de fondo en el body*/
-.sandwich__body--background {
-    background-image: url(../Imagenes/sandwich.jpg);
-}
 
-/*Se coloca imagen de fondo en el body*/
-.helados__body--background {
-    background-image: url(../Imagenes/helados.jpg);
-}
 
 .body__img--position{
     background-size: cover;
@@ -103,7 +100,7 @@ header nav{
     @include flex-row-spacebetween;
     align-items: center;
     height: 70px;
-    width: 100;
+    width: 100vw;
     /*Se retoca un poco la posición de la imagen*/
     img{
     padding: 0.3rem;
