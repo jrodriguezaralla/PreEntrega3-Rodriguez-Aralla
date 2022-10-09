@@ -19,6 +19,7 @@
 /*----------------------------------------------VARIABLES EMPANADAS---------------------------------------------------------*/
 /*----------------------------------------------VARIABLES SANDWICHES--------------------------------------------------------*/
 /*-----------------------------------------------VARIABLES HELADOS----------------------------------------------------------*/
+/*----------------------------------------------VARIABLES CAROUSEL---------------------------------------------------------*/
 /*---------------------------------------------VARIABLES GENERALES---------------------------------------------------------*/
 /*------------------------------------------------VARIABLES BODY-----------------------------------------------------------*/
 /*----------------------------------------------VARIABLES HEADER-----------------------------------------------------------*/
@@ -38,6 +39,7 @@
 /*----------------------------------------------VARIABLES EMPANADAS---------------------------------------------------------*/
 /*----------------------------------------------VARIABLES SANDWICHES--------------------------------------------------------*/
 /*-----------------------------------------------VARIABLES HELADOS----------------------------------------------------------*/
+/*----------------------------------------------VARIABLES CAROUSEL---------------------------------------------------------*/
 /*Para redefinir altura y ancho de un elemento*/
 /*Para redefinir las áreas con grid*/
 /*Para redefinir gap y padding del grid*/
@@ -428,11 +430,8 @@ footer {
     align-content: start;
     overflow-y: scroll; }
   /*------------------------------------------------SECTION GALERIA-------------------------------------------------*/
-  .galeria__section--aligment {
-    overflow-y: scroll;
-    align-content: start; }
-    .galeria__section--aligment img {
-      transform: scale(0.8, 0.8); }
+  .carrousel {
+    transform: scale(0.7, 0.7); }
   /*------------------------------------------------SECTION CONTACTO------------------------------------------------*/
   /*-------------------------------------------------SECTION PIZZAS-------------------------------------------------*/
   /*Se quita formato a lista y se alínean ambos listados equitativamente en el centro*/
@@ -487,6 +486,113 @@ footer {
   font-family: "Bleeding Cowboys";
   src: url("../fuentes/Bleeding_Cowboys.ttf");
   /*Se importa nueva fuente*/ }
+
+/*Para redefinir altura y ancho de un elemento*/
+/*Para redefinir las áreas con grid*/
+/*Para redefinir gap y padding del grid*/
+/*Para redefinir las áreas con grid*/
+/*Tipos de flex*/
+/*---------------------------------------------VARIABLES GENERALES---------------------------------------------------------*/
+/*------------------------------------------------VARIABLES BODY-----------------------------------------------------------*/
+/*----------------------------------------------VARIABLES HEADER-----------------------------------------------------------*/
+/*----------------------------------------------VARIABLES FOOTER-----------------------------------------------------------*/
+/*----------------------------------------------VARIABLES INICIO------------------------------------------------------------*/
+/*----------------------------------------------VARIABLES NOSOTROS---------------------------------------------------------*/
+/*a medida que se achica la pantalla se autoajustan las imagen hacia abajo tipo flex-wrap*/
+/*se indica que el alto del div sea el alto de la imagen para */
+/*------------------------------------------------VARIABLES MENU-----------------------------------------------------------*/
+/*a medida que se achica la pantalla se autoajustan las imagen hacia abajo tipo flex-wrap*/
+/*se le da el alto de los divs*/
+/*-----------------------------------------------VARIABLES PROMOS-----------------------------------------------------------*/
+/*a medida que se achica la pantalla se autoajustan las imagen hacia abajo tipo flex-wrap*/
+/*se le da el alto de los divs*/
+/*----------------------------------------------VARIABLES CONTACTO----------------------------------------------------------*/
+/*-----------------------------------------------VARIABLES PIZZAS-----------------------------------------------------------*/
+/*----------------------------------------------VARIABLES EMPANADAS---------------------------------------------------------*/
+/*----------------------------------------------VARIABLES SANDWICHES--------------------------------------------------------*/
+/*-----------------------------------------------VARIABLES HELADOS----------------------------------------------------------*/
+/*----------------------------------------------VARIABLES CAROUSEL---------------------------------------------------------*/
+.carrousel {
+  width: 500px;
+  height: 500px;
+  width: 500px; }
+
+.conteCarrousel {
+  width: 100%;
+  height: 500px;
+  overflow: hidden; }
+
+.itemCarrousel {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+
+.itemCarrouselTarjeta {
+  width: 100%;
+  height: 100%; }
+
+.itemCarrouselArrows {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .itemCarrouselArrows a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    height: 100%; }
+    .itemCarrouselArrows a i {
+      color: white;
+      font-size: 3rem; }
+    .itemCarrouselArrows a:hover {
+      cursor: pointer;
+      background-color: rgba(128, 128, 128, 0.5); }
+
+/*redimensionamiento de imagenes para que ocupen 500px de alto y ancho*/
+.itemCarrouselTarjeta_img1 img {
+  height: 500px;
+  width: 500px; }
+
+.itemCarrouselTarjeta_img2 img {
+  height: 500px;
+  width: 500px; }
+
+.itemCarrouselTarjeta_img3 img {
+  height: 500px;
+  width: 500px; }
+
+.itemCarrouselTarjeta_img4 img {
+  height: 500px;
+  width: 500px; }
+
+.itemCarrouselTarjeta_img5 img {
+  height: 500px;
+  width: 500px; }
+
+.itemCarrouselTarjeta_img6 img {
+  height: 500px;
+  width: 500px; }
+
+.itemCarrouselTarjeta_img7 img {
+  height: 500px;
+  width: 500px; }
+
+.itemCarrouselTarjeta_img8 img {
+  height: 500px;
+  width: 500px; }
+
+.itemCarrouselTarjeta_img9 img {
+  height: 500px;
+  width: 500px; }
+
+.itemCarrouselTarjeta_img10 img {
+  height: 500px;
+  width: 500px; }
 
 /*----------------------------------------------------------------------------------------------------------------*/
 /*---------------------------------------------ESTILOS SECTION----------------------------------------------------*/
@@ -672,6 +778,9 @@ footer {
   padding: 1rem 1rem;
   justify-content: space-evenly;
   align-content: space-evenly; }
+
+.galeria__section--background {
+  background-color: #efefef; }
 
 /*-----------------------------------------------CONTACTO---------------------------------------------------------*/
 /*Se indica display flex para centrar el cuadro de formulario*/
@@ -1094,11 +1203,8 @@ footer {
     align-content: start;
     overflow-y: scroll; }
   /*------------------------------------------------SECTION GALERIA-------------------------------------------------*/
-  .galeria__section--aligment {
-    overflow-y: scroll;
-    align-content: start; }
-    .galeria__section--aligment img {
-      transform: scale(0.8, 0.8); }
+  .carrousel {
+    transform: scale(0.7, 0.7); }
   /*------------------------------------------------SECTION CONTACTO------------------------------------------------*/
   /*-------------------------------------------------SECTION PIZZAS-------------------------------------------------*/
   /*Se quita formato a lista y se alínean ambos listados equitativamente en el centro*/

@@ -1,0 +1,64 @@
+@import "_mixins";
+@import "_variables";
+
+//definición de contenedor padre
+.carrousel{
+    width:$carousel_img_width;
+    @include sizes ($carousel_img_height,$carousel_img_width);
+}
+
+//definición de los contenedores hijos
+.conteCarrousel{
+    width: 100%;
+    height: $carousel_img_height;
+    overflow: hidden;
+}
+
+//definición de los items de cada contedenor hijo
+.itemCarrousel{
+    position: relative; //se lo coloca como position relative para que se sobreponga sobre las imagenes
+    width: 100%;
+    height: 100%;
+}
+
+//definición del contenedor de la imagen
+.itemCarrouselTarjeta{
+    width: 100%;
+    height: 100%;
+}
+
+//definición del contenedor de las flechas
+.itemCarrouselArrows{
+    position: absolute; //se lo coloca como position absolute para que se sobreponga sobre las imagenes
+    //se centra el contenedor
+    top: 0; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include flex-row-spacebetween; //se lo declara como flex para que las flechas queden en los laterales
+
+    a {
+        @include flex-column-center;// se declara flex para centrar flechas
+        text-decoration: none;
+        height: 100%;
+        i{           
+            color: white;
+            font-size: 3rem;
+        }
+        &:hover { //al pasar por arriva de las flechas que se sombree de un gris claro
+            cursor: pointer;
+            background-color: rgba(128, 128, 128, 0.5);
+        }
+    }
+}
+
+/*redimensionamiento de imagenes para que ocupen 500px de alto y ancho*/
+@for $i from 1 to 11 {
+    .itemCarrouselTarjeta_img#{$i} img{
+        @include sizes ($carousel_img_height,$carousel_img_width)
+    }
+}
+
+
+
+

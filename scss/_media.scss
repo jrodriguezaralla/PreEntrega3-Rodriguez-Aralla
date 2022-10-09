@@ -214,12 +214,8 @@
 
 /*------------------------------------------------SECTION GALERIA-------------------------------------------------*/
 
-.galeria__section--aligment{
-    overflow-y: scroll; //scrolleo del section
-    align-content: start; // se alinean elementos al inicio
-    img {
-        transform: scale(0.8,0.8); //se redimensionan imagenes
-    }
+.carrousel{
+    transform: scale(0.7,0.7); //se redimensionan imagenes
 }
 
 /*------------------------------------------------SECTION CONTACTO------------------------------------------------*/
