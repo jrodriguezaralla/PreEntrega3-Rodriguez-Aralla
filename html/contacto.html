@@ -43,14 +43,16 @@
                 <li><a href="../html/menu.html" class="MenNav-size">Menú</a></li>
                 <li><a href="../html/promos.html" class="MenNav-size">Promos</a></li>
                 <li><a href="../html/galeria.html" class="MenNav-size">Galeria</a></li>
-                <li><a href="../html/contacto.html" class="MenNav-size">Contacto</a></li>
+                <li><a href="../html/contacto.html" class="MenNav-size MenNav-active-text-color">Contacto</a></li>
             </ul>
             </nav>
         </header>
         
         <!-- cuerpo de pagina -->
         <section class="contacto__section--aligment">
+            <h3 class="form__title--style">Comentarios, dudas y/o sugerencias</h3>
             <form class="contacto__section--style">
+
                 <div>
                     <!-- <label for="nombre">Nombre:</label> -->
                     <input id="nombre" type="text" name="nombre" placeholder="Nombre y Apellido"required>
@@ -61,10 +63,16 @@
                 </div>
                 <textarea name="comentario" id="comentario" cols="50" rows="10" placeholder="Ingrese comentario, duda o sugerencia" required></textarea>
                 
-                <p class="animate__animated animacion_pulse">¡IMPORTANTE! Para realizar un pedido contactese por whatsapp o DM de Instagram</p>                    
+                <p class="animate__animated animacion_pulse">
+                    <a href="https://api.whatsapp.com/send?phone=5491151321801" target="_blank">¡IMPORTANTE! Para realizar un pedido contactese por whatsapp o DM de Instagram</a>
+                </p> 
+                
                 <div class="button--size">
-                    <input type="submit" class="boton">
+                    <a href="./confirmacion_form.html" class="boton_volver">Enviar</a>
                 </div>
+                <!-- <div class="button--size">
+                    <input type="submit" class="boton" href="./confirmacion_form.html">
+                </div> -->
             </form>
         </section>
         

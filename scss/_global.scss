@@ -99,8 +99,7 @@ header nav{
     background: linear-gradient(to right, $nav_color,$nav_color2);
     @include flex-row-spacebetween;
     align-items: center;
-    height: 70px;
-    width: 100vw;
+    @include sizes (70px,100vw);
     /*Se retoca un poco la posición de la imagen*/
     img{
     padding: 0.3rem;
@@ -112,6 +111,7 @@ header nav{
         list-style: none;
         @include flex-row-spacebetween;
         align-items: center;
+        margin-right: 0.8rem;
         /*Se indica que la lista se posicione en línea y el texto alineado al centro del contenedor*/
         li {
             height: $nav_heigh;
@@ -134,12 +134,15 @@ header nav{
                 &:hover{
                     /*al pasar el cursor por el link aparece una manito*/
                     cursor: pointer;
-                    background: $link_backgroud_color;
-                    box-shadow: $box_shadow_style;
+                    transform: scale(1.2);
                 }
             }
         }
     }
+}
+
+.MenNav-active-text-color{
+    color: $nav_color3;
 }
 
 /*----------------------------------------------------------------------------------------------------------------*/

@@ -23,6 +23,7 @@ $background_color_transparency: rgba(225, 227, 231, 0.5);
 /*----------------------------------------------VARIABLES HEADER-----------------------------------------------------------*/
 $nav_color: white;
 $nav_color2:rgb(9, 48, 9);
+$nav_color3: rgb(4,250,4);
 $nav_heigh: 70px;
 $link_backgroud_color:grey;
 $box_shadow_style:0 1rem 1rem rgba(0, 0, 0, 1);
@@ -31,9 +32,8 @@ $box_shadow_style:0 1rem 1rem rgba(0, 0, 0, 1);
 $footer_text_color:white;
 
 /*----------------------------------------------VARIABLES INICIO------------------------------------------------------------*/
-$title_font_family:"Bleeding Cowboys";
 $title_font_size: 7rem;
-$title_font_color: linear-gradient(180deg, rgba(247,5,5,1) 0%, rgba(22,125,4,1) 100%);
+$title_font_color: linear-gradient(180deg, rgba(247,5,5,1) 0%, rgba(22,125,4,1) 100%); //
 $title_shadow: 15px 15px 5px grey;
 
 $title2_font_size: 5rem;
@@ -65,15 +65,18 @@ $promos_title_size: 3rem;
 $promos_title_color: white;
 $promos_paragraph_size:1.5rem;
 $promos_paragraph_color: white;
+$promos_text_background_color: rgba(128, 128, 128, 0.8);
 $promo_text_shadow: 5px 5px 1px black;
 $promo_box_shadow: 5px 5px 10px black;
-$promos_column_width: repeat(auto-fit, minmax(20rem,19%)); /*a medida que se achica la pantalla se autoajustan las imagen hacia abajo tipo flex-wrap*/
+$promos_column_width: repeat(auto-fit, minmax(20rem,18%)); /*a medida que se achica la pantalla se autoajustan las imagen hacia abajo tipo flex-wrap*/
 $promos_rows_heigh: 400px;
 
 $media_promos_column_width: 300px;
 $media_promos_rows_heigh: repeat(5,400px); /*se le da el alto de los divs*/;
 /*----------------------------------------------VARIABLES CONTACTO----------------------------------------------------------*/
 $contacto_columns_width: 90%;
+$contacto_title_color:rgb(9, 48, 9);
+$contacto_title_size: 2rem;
 $contacto_rows_heigh: 20px 20px auto auto 24px;
 $contacto_border_color: rgb(4, 250, 4);
 $contacto_box_shadow: 0 0 5px rgb(4, 250, 4);

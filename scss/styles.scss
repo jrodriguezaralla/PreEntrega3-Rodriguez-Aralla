@@ -22,7 +22,7 @@
 
 /*Se le da formato al texto central de bienvenida*/
 .index-section__titulo {
-    font-family: $title_font_family;  
+    font-family: $letra_lobster;  
     text-align: center;
     font-size: $title_font_size;
     width: 100%;
@@ -142,19 +142,22 @@
     /*Con estas líneas realizo un diseño reponsive*/
     @include display_aligment_responsive (grid, $promos_column_width, $promos_rows_heigh, space-evenly, center);
     /*posicionamiento de texto*/
+    h3{
+        width: 100%;
+        text-align: center;
+        font-size: $promos_title_size;
+        color: $promos_title_color;
+        background-color: $promos_text_background_color;
+    }
+    /*posicionamiento de texto*/
     p{
+        
         text-align: center;
         font-size: $promos_paragraph_size;
         font-weight: bold;
         text-shadow: $promo_text_shadow;
         color: $promos_paragraph_color;
-    }
-
-    /*posicionamiento de texto*/
-    h3{
-        text-align: center;
-        font-size: $promos_title_size;
-        color: $promos_title_color;
+        background-color: $promos_text_background_color;
     }
 }
 
@@ -199,6 +202,15 @@
     @include flex-column-center;
     align-items: center;
 }
+/*estilo titulo formulario*/
+.form__title--style{
+    font-family: $letra_lobster;
+    color: $contacto_title_color;
+    font-size: $contacto_title_size;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    //width: $contacto_columns_width;
+}
 
 /*estilo formulario*/
 .contacto__section--style{
@@ -222,12 +234,19 @@
         }
     }
     /*formato del texto de warning*/
+
     p{
-        color: $contacto_sign_color;
-        text-align: justify;
-        font-weight: bold;
-        text-shadow: $contacto_sign_shadow;
+        text-align: center;
+        a{
+            text-decoration: none;
+            color: $contacto_sign_color;
+            
+            font-weight: bold;
+            text-shadow: $contacto_sign_shadow;
+        }
     }
+
+
 }
 
 

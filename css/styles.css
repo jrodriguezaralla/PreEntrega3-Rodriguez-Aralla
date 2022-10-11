@@ -158,6 +158,7 @@ header nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-right: 0.8rem;
     /*Se indica que la lista se posicione en línea y el texto alineado al centro del contenedor*/ }
     header nav ul li {
       height: 70px;
@@ -180,8 +181,10 @@ header nav {
         header nav ul li a:hover {
           /*al pasar el cursor por el link aparece una manito*/
           cursor: pointer;
-          background: grey;
-          box-shadow: 0 1rem 1rem black; }
+          transform: scale(1.2); }
+
+.MenNav-active-text-color {
+  color: #04fa04; }
 
 /*----------------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------ESTILO FOOTER--------------------------------------------------------*/
@@ -271,8 +274,8 @@ footer {
   /*Se le da formato a las diferentes opciones del menú de navegación*/
   .MenNav-size {
     font-size: 1rem;
-    padding-left: 12px;
-    padding-right: 12px; }
+    padding-left: 8px;
+    padding-right: 8px; }
   /*-------------------------------------------------SECTION INICIO-------------------------------------------------*/
   /*Se le da formato al texto central de bienvenida*/
   .index-section__titulo {
@@ -608,7 +611,7 @@ footer {
 
 /*Se le da formato al texto central de bienvenida*/
 .index-section__titulo {
-  font-family: "Bleeding Cowboys";
+  font-family: "Lobster", cursive;
   text-align: center;
   font-size: 7rem;
   width: 100%;
@@ -731,22 +734,25 @@ footer {
   padding: 1rem 1rem;
   /*Con estas líneas realizo un diseño reponsive*/
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 19%));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 18%));
   grid-auto-rows: 400px;
   justify-content: space-evenly;
   align-content: center;
   /*posicionamiento de texto*/
   /*posicionamiento de texto*/ }
+  .promos__section--aligment h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    background-color: rgba(128, 128, 128, 0.8); }
   .promos__section--aligment p {
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
     text-shadow: 5px 5px 1px black;
-    color: white; }
-  .promos__section--aligment h3 {
-    text-align: center;
-    font-size: 3rem;
-    color: white; }
+    color: white;
+    background-color: rgba(128, 128, 128, 0.8); }
 
 .promos__box--style {
   border: none;
@@ -790,6 +796,14 @@ footer {
   justify-content: center;
   align-items: center; }
 
+/*estilo titulo formulario*/
+.form__title--style {
+  font-family: "Lobster", cursive;
+  color: #093009;
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 0.5rem; }
+
 /*estilo formulario*/
 .contacto__section--style {
   grid-area: section;
@@ -817,10 +831,12 @@ footer {
       box-shadow: 0 0 5px #04fa04;
       border-width: 3px; }
   .contacto__section--style p {
-    color: red;
-    text-align: justify;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px black; }
+    text-align: center; }
+    .contacto__section--style p a {
+      text-decoration: none;
+      color: red;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px black; }
 
 /*-------------------------------------------------PIZZAS---------------------------------------------------------*/
 /*display grid para organizar los elementos*/
@@ -1044,8 +1060,8 @@ footer {
   /*Se le da formato a las diferentes opciones del menú de navegación*/
   .MenNav-size {
     font-size: 1rem;
-    padding-left: 12px;
-    padding-right: 12px; }
+    padding-left: 8px;
+    padding-right: 8px; }
   /*-------------------------------------------------SECTION INICIO-------------------------------------------------*/
   /*Se le da formato al texto central de bienvenida*/
   .index-section__titulo {
